@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      --card-bg: rgba(255,255,255,0.05);
+      --shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    body{
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg,#1e293b,#0f172a);
+      color:#f8fafc;margin:0;padding:0;
+    }
+    .container{
+      max-width:850px;margin:50px auto;padding:30px;
+      background:var(--card-bg);border-radius:20px;box-shadow:var(--shadow);
+      text-align:center;animation:fadeIn 600ms ease-out both;
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(8px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    h1{font-size:2.5em;margin-bottom:15px;color:#38bdf8}
+    img{
+      width:200px;height:200px;object-fit:cover;border-radius:50%;
+      border:4px solid #38bdf8;margin-bottom:20px;
+      box-shadow:0 6px 18px rgba(56,189,248,0.25);
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+    img:hover{
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 10px 26px rgba(56,189,248,0.35);
+    }
+    p{font-size:1.2em;line-height:1.6;margin:10px 0}
+    .highlight{color:#facc15;font-weight:bold}
+    .section-title{margin-top:25px;font-size:1.5em;color:#34d399}
+    .info{text-align:left;margin-top:20px}
+    .info p{
+      font-size:1.1em;display:flex;align-items:center;margin-bottom:10px;
+    }
+    .info span{margin-left:10px}
+
+    /* ---- Social buttons ---- */
+    .social-box{
+      display:flex;flex-direction:column;align-items:flex-start;
+      margin-top:10px;gap:10px;
+    }
+    .social-link{
+      display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+      font-size:1.06em;font-weight:700;padding:10px 16px;border-radius:12px;
+      transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      box-shadow:0 3px 8px rgba(0,0,0,0.3); will-change: transform;
+      position:relative; overflow:hidden;
+    }
+    .social-link i{font-size:1.2em;transition:transform .25s ease}
+    .social-link:hover{transform:translateY(-3px) scale(1.02)}
+    .social-link:active{transform:translateY(0) scale(0.98)}
+    .social-link:hover i{animation:pop 350ms ease}
+    @keyframes pop{50%{transform:scale(1.25)}}
+
+    /* Glow on hover */
+    .social-link::after{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:linear-gradient(90deg,rgba(255,255,255,.15),transparent,rgba(255,255,255,.15));
+      transform:translateX(-100%); transition:transform .6s ease;
+    }
+    .social-link:hover::after{transform:translateX(100%)}
+
+    /* Colors */
+    .wa-link{background:#25D366;color:#fff}
+    .wa-link:hover{box-shadow:0 8px 18px rgba(37,211,102,.35)}
+    .tg-link{background:#2AABEE;color:#fff}
+    .tg-link:hover{box-shadow:0 8px 18px rgba(42,171,238,.35)}
+    .insta-link{background:#E4405F;color:#fff}
+    .insta-link:hover{box-shadow:0 8px 18px rgba(228,64,95,.35)}
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important}
+    }
+    .container {
+  max-width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+}
+img {
+  width: 150px;
+  height: 150px;
+}
+@media (max-width: 480px) {
+  img {
+    width: 120px;
+    height: 120px;
+  }
+}
+.social-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.social-link {
+  width: 150px;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .section-title {
+    font-size: 1.2em;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Сурет -->
+    <img src="image.png" alt="Менің суретім"/>
+
+    <h1>Садыжан Еламан</h1>
+
+    <div class="info">
+      <p>📅 <span><span class="highlight">Туған күні:</span> 29.09.2011</span></p>
+      <p>📍 <span><span class="highlight">Туған жері:</span> Қазақстан, Жетісу облысы, Үшарал ауылы</span></p>
+
+      <!-- WhatsApp + Telegram + Instagram -->
+      <div class="social-box">
+        <!-- WhatsApp: дайын хабарлама мәтіні төменде data-wa-text ішінде -->
+        <a id="wa-link"
+           class="social-link wa-link"
+           href="https://wa.me/77770545697"
+           target="_blank" rel="noopener"
+           data-wa-phone="77770545697"
+           data-wa-text="Сәлем! Мен сенің жеке Портфолио сайтыңнан келдім.">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://t.me/elaamaan0" target="_blank" rel="noopener" class="social-link tg-link">
+          <i class="fab fa-telegram"></i> @elaamaan0
+        </a>
+
+        <a href="https://www.instagram.com/11.09.2902/" target="_blank" rel="noopener" class="social-link insta-link">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Қызығушылықтарым</h2>
+    <p>💻 IT саласында бағдарлама кодтау</p>
+    <p>🎮 ПК Roblox ойнау</p>
+
+    <h2 class="section-title">Арманым</h2>
+    <p>🌟 Өз орнымды тауып, жақсы IT компанияда істеу</p>
+    <p>📈 IELTS 8.0-ден жоғары бал жинау</p>
+    <p>🎓 Азия мен Еуропаның топ IT университеттеріне түсу</p>
+
+    <h2 class="section-title">Жобаларым</h2>
+    <p>🌐 Vernox 2.0 атты сайт</p>
+    <p>🤖 Telegram бот</p>
+    <p>🖊️ 3D Картинка</p>
+  </div>
+
+  <script>
+    // WhatsApp "дайын хабарлама" генерациясы
+    (function () {
+      const wa = document.getElementById('wa-link');
+      if (!wa) return;
+
+      wa.addEventListener('click', function (e) {
+        // href-ті өзіміз құрамыз — қазақ әріптері дұрыс кодталуы үшін
+        e.preventDefault();
+        const phone = wa.dataset.waPhone || '77770545697';
+        const text  = wa.dataset.waText  || 'Сәлем! Мен сенің жеке Портфолио сайтыңнан келдім.';
+        const url   = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank', 'noopener');
+      });
+    })();
+  </script>
+</body>
+</html>
